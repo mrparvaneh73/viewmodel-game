@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigat"
+    app:startDestination="@id/gameFragment">
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.game_viewmodel.GameFragment"
+        android:label="GameFragment"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_cheatFragment"
+            app:destination="@id/cheatFragment" />
+        <argument
+            android:name="cheating"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/cheatFragment"
+        android:name="com.example.game_viewmodel.CheatFragment"
+        android:label="CheatFragment"
+        tools:layout="@layout/fragment_cheat">
+        <action
+            android:id="@+id/action_cheatFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="question"
+            app:argType="string" />
+        <argument android:name="answer" />
+    </fragment>
+</navigation>
